@@ -12,9 +12,9 @@ builder.Services.AddControllersWithViews();
 // Variáveis de ambiente do container
 */
 var server = builder.Configuration["DbServer"] ?? "localhost";
-var port = builder.Configuration["DbPort"] ?? "1433"; // usar em caso de conexão via docker
+var port = builder.Configuration["DbPort"] ?? "4444"; // usar em caso de conexão via docker
 var user = builder.Configuration["DbUser"] ?? "sa";
-var password = builder.Configuration["DbPassword"] ?? "Local@1234";
+var password = builder.Configuration["DbPassword"] ?? "########";
 var database = builder.Configuration["Database"] ?? "LivrosDb";
 
 // var connectionString = $"Server={server},{port};Initial Catalog={database};Password={password};User ID={user};Persist Security Info=True;";
