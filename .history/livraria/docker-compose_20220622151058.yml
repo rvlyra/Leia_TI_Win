@@ -1,0 +1,26 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  livrariamvc:
+    image: ${DCOKER_REGISTRY-}livraria
+    build:
+      context: .
+      dockerfile: .
+    port:
+    - "8081:80"
+    depends_on:
+    - sqlbase
+
+
+  sqlbase:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - SA_PASSWORD=Local@1234
+      - ACCEPT_EULA=Y
+
+    valumes:
+      - D:\Dados\rlyra\AppSource\Volumes\Mssql:/var/opt/mssql/data
+    ports:
+      - "1433:1433"
+
+
+    # docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Local@1234" -p 1433:1433 --name sql_server -d mcr.microsoft.com/mssql/server:2019-latest

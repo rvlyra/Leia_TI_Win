@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  livrariamvc:
+    image: ${DCOKER_REGISTRY-}livraria
+    build:
+      context: .
+      dockerfile: .
+    port:
+    - "8081:80"
+    depends_on:
+    - sqlbase
+
+
+  sqlbase:
+    image: imageName

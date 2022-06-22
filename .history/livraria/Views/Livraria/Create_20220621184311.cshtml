@@ -1,0 +1,26 @@
+@model livraria.Models.Livro
+
+
+<h2>Novo Livro</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-horizontal">
+        <hr>
+        <div class="group-form">
+            <label asp-for="Titulo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="group-form">
+            
+            <div class="col-md-10">
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+</form>
